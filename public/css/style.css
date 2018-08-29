@@ -4,8 +4,9 @@ header{
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
-.title{
+#title{
   text-align: center;
+  text-transform: capitalize;
 }
 nav{
   color: rgb(25,72,147);
