@@ -42,7 +42,7 @@
                 </p>
               <br />
               <br />
-              <table class="table table-striped table-bordered table-hover">
+              <table id="travelTable" class="table table-striped table-bordered table-hover">
                 <thead class="thead-dark">
                   <tr>
                     <th>Place</th>
@@ -151,5 +151,14 @@
          1111 MSIS Rd - Bloomington, IN 47404 - (812) 555-5555 - rmwillli@iu.edu
       </footer>
   </div>
+  <script src='js/tablesort.min.js'></script>
+
+  <!-- Include sort types you need -->
+  <script src='js/tablesort.number.js'></script>
+  <script src='js/tablesort.date.js'></script>
+
+  <script>
+    new Tablesort(document.getElementById('travelTable'));
+  </script>
 </body>
 </html>
