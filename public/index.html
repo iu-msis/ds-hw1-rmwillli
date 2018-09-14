@@ -17,10 +17,9 @@
     <title>Homework 1_rmwillli</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div id="personalInfo" class="container-fluid">
       <header class="row">
-        <img class="img img-circle" src="img/ProfessionalPicture.jpg" alt="Max Williams" height = 100>
-        <h1 id="title">max williams' personal page</h1>
+        <h1 id="title">{{result.name.first}} {{result.name.last}} personal page</h1>
       </header>
       <div class="row">
         <nav class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
@@ -41,13 +40,14 @@
                     and Bloomington has to offer. I went to many IU football, basketball, and baseball games, walked around campus
                     and downtown, and spent many summers at Lake Monroe.
                   </p>
-                  <h4>Personal Information:</h4>
-                  <p  class="information">
-                    Name:{{data.user.gender}}
-                  </p>
-                  <div id="personalInfo">
-              {{ message }}
-            </div>
+                  <h4>Personal Information:
+                    <button type="button" v-on:click="fetchProject()">New Me!</button>
+                  </h4>
+                  <p class="information name">Name: {{result.name.first}} {{result.name.last}}</p>
+                  <p class="information">Age: {{result.gender}}</p>
+                  <p class="information">Birthdate: </p>
+                  <p class="information">Age: </p>
+                  <p class="information">Email Address: {{result.email}}</p>
                   <br />
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">

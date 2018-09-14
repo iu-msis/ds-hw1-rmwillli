@@ -8,6 +8,9 @@ header{
   text-align: center;
   text-transform: capitalize;
 }
+.information{
+  text-align: left;
+}
 nav{
   color: rgb(25,72,147);
   text-align: center;
@@ -28,6 +31,9 @@ thead{
 }
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
+}
+.name{
+  text-transform: capitalize;
 }
 
 th[role=columnheader]:not(.no-sort):after {
