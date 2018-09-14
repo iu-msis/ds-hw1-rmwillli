@@ -3,7 +3,7 @@ var personalInfo = new Vue({
   data: {
     result:
     {
-      gender: "",
+      "gender": "",
       "name": {
         "title": "",
         "first": "",
@@ -38,7 +38,7 @@ var personalInfo = new Vue({
         "age": 0
       },
       "registered": {
-        "date": "",
+        "date": "2015-11-04T22:09:36Z",
         "age": 0
       },
       "phone": "",
@@ -52,11 +52,10 @@ var personalInfo = new Vue({
         "medium": "",
         "thumbnail": ""
       },
-      "nat": "NO"
-    }
-  ,
+      "nat": ""
+    },
   "info": {
-    "seed": "2da87e9305069f1d",
+    "seed": "",
     "results": 1,
     "page": 1,
     "version": "1.2"
@@ -64,13 +63,14 @@ var personalInfo = new Vue({
 
   },
   computed: {
-
+    age_calculated: function () {
+      return moment().diff(moment(this.result.dob.date), 'years')
+    }
   },
   methods: {
     pretty_date: function (d) {
       return moment(d).format('l')
     },
-
     fetchProject () {
   fetch('https://randomuser.me/api/')
   .then( response => response.json() )
@@ -80,9 +80,9 @@ var personalInfo = new Vue({
     console.log(err);
   })
 }
-    //userapp.somethingelse = json.results[0]
   },
   created () {
       this.fetchProject();
+
     }
 })

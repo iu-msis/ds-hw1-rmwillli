@@ -13,11 +13,13 @@
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <title>Homework 1_rmwillli</title>
   </head>
   <body>
     <div id="personalInfo" class="container-fluid">
+
       <header class="row">
         <h1 id="title">{{result.name.first}} {{result.name.last}} personal page</h1>
       </header>
@@ -34,21 +36,20 @@
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 ">
                   <p>
-                    My name is Max Williams. I was born and raised in Bloomington, Indiana.
-                    My birthday is January 16, 1996. Which means, I am now 22 years old.
+                    My name is <srcipt class="name">{{result.name.first}}</srcipt>. I was born and raised in Bloomington, Indiana.
                     Growing up in Bloomington, I was able to enjoy all of the sights and events that Indiana University
                     and Bloomington has to offer. I went to many IU football, basketball, and baseball games, walked around campus
                     and downtown, and spent many summers at Lake Monroe.
                   </p>
                   <h4>Personal Information:
-                    <button type="button" v-on:click="fetchProject()">New Me!</button>
-                  </h4>
+                    <button type="button" v-on:click="fetchProject()">See a new me</button>
+                  </h4><img class="img" v-bind:src="result.picture.large">
                   <p class="information name">Name: {{result.name.first}} {{result.name.last}}</p>
-                  <p class="information">Age: {{result.gender}}</p>
-                  <p class="information">Birthdate: </p>
-                  <p class="information">Age: </p>
                   <p class="information">Email Address: {{result.email}}</p>
-                  <br />
+                  <p class="information">Gender: {{result.gender}}</p>
+                  <p class="information">Birthdate: {{pretty_date(result.dob.date)}}</p>
+                  <p class="information">Age: {{age_calculated}}</p>
+                  <p class="information">Origin: {{result.location.state}}</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <img class="img" src="img/IUFootball.jpg" alt="IU Football" height = 200>
@@ -71,6 +72,9 @@
       </footer>
 
   </div>
+  <!-- moment.js via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
      <!-- development version, includes helpful console warnings -->
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
      <script src="js/info.app.js"></script>

@@ -10,6 +10,7 @@ header{
 }
 .information{
   text-align: left;
+  text-transform: capitalize;
 }
 nav{
   color: rgb(25,72,147);
