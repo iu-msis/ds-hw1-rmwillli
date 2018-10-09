@@ -11,7 +11,7 @@ class Comment
     $this->comment = $row['comment'];
   }
 
-  public static function findAll() {
+  public static function getAllComments() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
