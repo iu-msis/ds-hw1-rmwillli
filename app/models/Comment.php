@@ -30,7 +30,7 @@ class Comment
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT INTO Comment (comment) VALUES (?)';
     $statement = $db->prepare($sql);
-    $success = $statement->execute([$this->comment])
+    $success = $statement->execute([$this->comment]);
     $this->id = $db->lastInsertId();
   }
 }
