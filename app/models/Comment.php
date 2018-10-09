@@ -6,38 +6,30 @@ class Comment
   public $comment;
 
   public function __construct($row) { //constructor --> turning this into a new instance of team
-    $this->id = intval($row['id']);
-
+    $this->id = isset($row['id']) ? intval($row['id']) : null;
     $this->comment = $row['comment'];
   }
 
   public static function getAllComments() {
-    // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-    // 2. Prepare the query
     $sql = 'SELECT * FROM Comment';
+    $statement = $db->prepare($sql);
+    $success = $statement->execute();
 
-    $statement = $db->prepare($sql); //make pdo statement object --> knows how to query database and  handle response
-
-    // 3. Run the query
-    $success = $statement->execute(
-        [$id]
-    );
-
-    // 4. Handle the results
     $commentArr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {  //get the next row in the query
-      // 4.a. For each row, make a new work object
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $comment =  new Comment($row);
-
       var_dump($comment);
       die;
-      array_push($arr, $comment);
+      array_push($CommentArr, $comment);
     }
-
-    // 4.b. return the array of work objects
-
     return $commentArr;
+  }
+
+  public function createComment(){
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+    $sql = 'INSERT INTO Comment (comment) VALUES (?)';
+    $statement = $db->prepare($sql);
+    $success = $statement->execute([$this->comment]);
   }
 }
