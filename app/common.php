@@ -5,4 +5,4 @@ set_include_path (__DIR__);
 require 'environment.php';
 
 /** MODELS **/
-require 'models/Comments.php';
+require 'models/Comment.php';
