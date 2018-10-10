@@ -19,8 +19,6 @@ class Comment
     $commentArr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $comment =  new Comment($row);
-      var_dump($comment);
-      die;
       array_push($CommentArr, $comment);
     }
     return $commentArr;
