@@ -3,7 +3,7 @@ require '../../app/common.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $comment = new Comment($_POST);
-  $comment->create();
+  $comment->createComment();
   echo json_encode($comment);
   exit;
 }
