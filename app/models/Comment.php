@@ -11,8 +11,7 @@ class Comment
   }
 
   public static function getAllComments() {
-    $connect = @mysql_connect($mysql_host, $mysql_user, $mysql_password)or die(mysql_error());
-    $db = @mysql_select_db($mysql_database,$connect)or die(mysql_error());
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'SELECT * FROM Comment';
     $statement = $db->prepare($sql);
     $success = $statement->execute();
@@ -25,8 +24,7 @@ class Comment
   }
 
   public function createComment(){
-    $connect = @mysql_connect($mysql_host, $mysql_user, $mysql_password)or die(mysql_error());
-    $db = @mysql_select_db($mysql_database,$connect)or die(mysql_error());
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT INTO Comment (comment) VALUES (?)';
     $statement = $db->prepare($sql);
     $success = $statement->execute([$this->comment]);
