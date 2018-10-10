@@ -10,12 +10,7 @@ class Comment
     $this->comment = $row['comment'];
   }
 
-<<<<<<< HEAD
   public static function getAllComments() {
-=======
-  public static function findAll() {
-    // 1. Connect to the database
->>>>>>> parent of 768a1b7... PHP Updates
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'SELECT * FROM Comment';
     $statement = $db->prepare($sql);
