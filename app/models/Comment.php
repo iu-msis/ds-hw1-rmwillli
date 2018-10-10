@@ -15,7 +15,6 @@ class Comment
     $sql = 'SELECT * FROM Comment';
     $statement = $db->prepare($sql);
     $success = $statement->execute();
-
     $commentArr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $comment =  new Comment($row);
