@@ -9,8 +9,6 @@ var commentApp = new Vue({
 
       const s = JSON.stringify(this.commentForm);
 
-      console.log(e);
-
         fetch('api/comment.php', {
           method: "POST",
           headers: {
@@ -38,7 +36,7 @@ var commentApp = new Vue({
 
     fetch('api/comment.php')
     .then( response => response.json() )
-    .then( json => {commentApp.comment = json} )
+    .then( json => {commentApp.comment.push(json)} )
     .catch( err => {
       console.log('TEAM LIST ERROR:');
       console.log(err);
