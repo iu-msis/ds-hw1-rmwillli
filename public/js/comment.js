@@ -42,6 +42,6 @@ var commentApp = new Vue({
   //  .catch( err => {
     //  console.log('TEAM LIST ERROR:');
     //  console.log(err);
-    })
+  //  })
   }
 })
