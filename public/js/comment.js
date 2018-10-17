@@ -36,12 +36,12 @@ var commentApp = new Vue({
   created () {
     this.commentForm = this.getEmptyWorkForm();
 
-    fetch('api/comment.php')
-    .then( response => response.json() )
-    .then( json => {commentApp.comment = json} )
-    .catch( err => {
-      console.log('TEAM LIST ERROR:');
-      console.log(err);
+    //fetch('api/comment.php')
+    //.then( response => response.json() )
+  //  .then( json => {commentApp.comment = json} )
+  //  .catch( err => {
+    //  console.log('TEAM LIST ERROR:');
+    //  console.log(err);
     })
   }
 })
