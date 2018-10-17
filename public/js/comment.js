@@ -16,19 +16,18 @@ var commentApp = new Vue({
         },
           body: s
         })
-        //.then( response => response.json() )
-      //  .then( json => {this.comment.push(json)})
-        //.catch( err => {
-        //  console.error('WORK POST ERROR:');
-      //    console.error(err);
-      //  })
-      this.comment.push(JSON.parse(s));
+        .then( response => response.json() )
+        .then( json => {this.comment.push(json)})
+        .catch( err => {
+          console.error('WORK POST ERROR:');
+          console.error(err);
+        })
 
       // Reset workForm
       this.commentForm = this.getEmptyWorkForm();
     },
     getEmptyWorkForm() {
-      return {comment: ""}
+      return {comment: ''}
     }
   },
   created () {
