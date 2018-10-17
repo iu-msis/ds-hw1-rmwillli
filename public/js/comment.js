@@ -32,8 +32,6 @@ var commentApp = new Vue({
     }
   },
   created () {
-    this.commentForm = this.getEmptyWorkForm();
-
     fetch('api/comment.php')
     .then( response => response.json() )
     .then( json => {commentApp.comment = json} )
