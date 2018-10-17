@@ -43,7 +43,7 @@
               <form id = "newCommentForm" @submit.prevent="handleCommentForm">
                 <div class="input-group">
                   <label class="input-group-addon" for="comment">Comment</label>
-                  <input type="text"  id="comment" class="form-control" value ="" v-model.lazy="commentForm.comment" required><br>
+                  <input type="text"  id="comment" class="form-control" value ="" v-model="commentForm.comment" required><br>
                 </div>
                 <br>
                   <input type="submit" value ="Submit" id="submitNewComment">
