@@ -36,7 +36,7 @@ var commentApp = new Vue({
 
     fetch('api/comment.php')
     .then( response => response.json() )
-    .then( json => {commentApp.comment.push(json)} )
+    .then( json => {commentApp.comment = json} )
     .catch( err => {
       console.log('TEAM LIST ERROR:');
       console.log(err);
