@@ -18,12 +18,12 @@ var commentApp = new Vue({
         },
           body: s
         })
-        .then( response => response.json() )
-        .then( json => {this.comment.push(json)})
-        .catch( err => {
-          console.error('WORK POST ERROR:');
-          console.error(err);
-        })
+        //.then( response => response.json() )
+      //  .then( json => {this.comment.push(json)})
+        //.catch( err => {
+        //  console.error('WORK POST ERROR:');
+      //    console.error(err);
+      //  })
       this.comment.push(JSON.parse(s));
 
       // Reset workForm
@@ -36,12 +36,12 @@ var commentApp = new Vue({
   created () {
     this.commentForm = this.getEmptyWorkForm();
 
-    //fetch('api/comment.php')
-    //.then( response => response.json() )
-  //  .then( json => {commentApp.comment = json} )
-  //  .catch( err => {
-    //  console.log('TEAM LIST ERROR:');
-    //  console.log(err);
-  //  })
+    fetch('api/comment.php')
+    .then( response => response.json() )
+    .then( json => {commentApp.comment = json} )
+    .catch( err => {
+      console.log('TEAM LIST ERROR:');
+      console.log(err);
+   })
   }
 })
